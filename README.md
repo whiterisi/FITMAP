@@ -1,4 +1,4 @@
-# FITMAP_Front-end
+# FITMAP
 
 시연영상
 https://youtu.be/VpVORzzLoD4
