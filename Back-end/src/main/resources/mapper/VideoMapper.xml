@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ssafy.ssafit.model.dao.VideoDao">
+	<select id="selectByPart" parameterType="int" resultType="video">
+		select * from Video
+		where part = #{part}
+	</select>
+	<insert id="insertVideo" parameterType="video">
+		insert into Video
+		values(#{videoId},#{title},#{part},#{url},#{channel})
+	</insert>
+	<select id="selectById" parameterType="String" resultType="video">
+		select * from Video
+		where videoId = #{videoId}
+	</select>
+	<select id="selectByKeyword" parameterType="String" resultType="video">
+		select * from Video
+		where title like '%${keyword}%'
+	</select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ssafy.ssafit.model.dao.DailyRecordDao">
+	<select id="selectByUserId" parameterType="String" resultType="dailyRecord">
+		select * from DailyRecord
+		where userId = #{userId}
+		order by date desc, recordId desc;
+	</select>
+	
+	<!-- 추가부분 -->
+	<select id="selectByRecordId" parameterType="int" resultType="dailyRecord">
+		select * from DailyRecord
+		where recordId = #{recordID}
+	</select>
+	
+	<select id="selectUserByTime" resultType="String">
+		select userId from DailyRecord 
+		where Month(date)=Month(now())
+		group by userId
+		order by sum(minutes) desc;
+	</select>
+	<select id="selectMonthlySum" parameterType="String" resultType="int">
+		select sum(minutes) from DailyRecord
+		where Month(date) = Month(now()) and userId=#{userId}
+		group by userId;
+	</select>
+	<insert id="insertRecord" parameterType="dailyRecord">
+		insert into DailyRecord
+		values(#{recordId},#{userId},#{date},#{part},#{minutes},#{comment})
+	</insert>
+	<update id="updateRecord" parameterType="dailyRecord"> <!--  resultType="int" -->
+		update DailyRecord
+		set 
+		part = #{part},
+		minutes = #{minutes},
+		comment = #{comment}
+		where recordId=#{recordId}
+	</update>
+	<delete id = "deleteRecord" parameterType="int">
+		delete from DailyRecord
+		where recordId = #{recordId}
+	</delete>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ssafy.ssafit.model.dao.CommentDao">
+	<select id="selectByUserId" parameterType="String">
+		select * from Comment
+		where userId=#{userId}
+	</select>
+	<insert id="insertComment" parameterType="comment">
+		insert into Comment
+		values(0,#{userId},#{videoId},#{parentId},#{date},#{content})
+	</insert>
+	<update id="updateComment" parameterType="comment">
+		update Comment
+		set
+		content = #{content}
+		where commentId = #{commentId}
+	</update>
+	<delete id="deleteComment" parameterType="int">
+		delete from Comment
+		where commentId = #{commentId}
+	</delete>
+
+	<select id="selectByVideo" parameterType="String" resultType="comment">
+		select * from Comment
+		where videoId=#{videoId}
+		order by date desc, commentId desc;
+	</select>
+	
+	<select id ="selectById" parameterType="int" resultType="comment">
+		select * from Comment
+		where commentId = #{commentId}
+	</select>
+</mapper>

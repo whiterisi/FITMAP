@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ssafy.ssafit.model.dao.FollowDao">
+	<select id="selectByUserId" parameterType="String" resultType="follow">
+		select * from Follow
+		where userId = #{userId}
+	</select>
+	<insert id="insertFollow" parameterType="follow">
+		insert into Follow
+		values(0,#{userId},#{follow},(select nickName from user where userId = #{follow}));
+	</insert>
+	<delete id="deleteFollow" parameterType="follow">
+		delete from Follow
+		where userId = #{userId} and follow = #{follow}
+	</delete>
+	
+	<select id="checkFollow" parameterType="java.util.HashMap" resultType="follow">
+		select * from Follow
+		where userId = #{userId} and follow = #{follow}
+	</select>
+	
+</mapper>
