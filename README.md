@@ -1,7 +1,7 @@
 # FITMAP
 
 **FITMAP은 사용자의 운동 기록을 Heatmap으로 시각화해 보여주고, 균형있는 운동 부위 추천을 통해 사용자들이 건강한 운동 습관을 형성할 수 있도록 돕는 서비스입니다.** <br>
-[FITMAP 소개 자료](SSAFY_서울7반_1조_FITMAP.pdf)
+[FITMAP 소개 자료](FITMAP_발표자료.pdf)
 
 ## 발표영상
 https://youtu.be/uRWiP32PyVA
