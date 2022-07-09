@@ -1,11 +1,10 @@
 # FITMAP
-
+![메인](https://user-images.githubusercontent.com/97995420/178087358-22779815-d54f-491a-b5ac-e5f79c7e139b.gif)
 **FITMAP은 사용자의 운동 기록을 Heatmap으로 시각화해 보여주고, 균형있는 운동 부위 추천을 통해 사용자들이 건강한 운동 습관을 형성할 수 있도록 돕는 서비스입니다.** <br>
 [FITMAP 소개 자료](FITMAP_발표자료.pdf)
 
 ## 발표영상
 https://youtu.be/uRWiP32PyVA
-
 
 ## 시연 영상
 https://youtu.be/VpVORzzLoD4
@@ -14,9 +13,13 @@ https://youtu.be/VpVORzzLoD4
 ## 핵심 기능
 
 1. Heatmap을 통한 운동 기록 시각화<br>
+![기록추가](https://user-images.githubusercontent.com/97995420/178087330-53e62a52-2841-494a-a301-2d97355503e5.gif)
 2. 알고리즘에 의한 운동 부위 추천<br>
-3. 월별 운동 시간 기준 랭킹 제공<br>
-4. 회원 별 개인 페이지 및 팔로우 기능<br>
+![운동부위추천](https://user-images.githubusercontent.com/97995420/178087377-04d5af67-18ad-49b0-9dbd-1110cacd04c2.gif)
+3. 회원 별 개인 페이지 및 팔로우 기능<br>
+![팔로우](https://user-images.githubusercontent.com/97995420/178087369-8fc4463f-df08-469e-b5cd-a3b1d27c7a42.gif)
+4. 월별 운동 시간 기준 랭킹 제공<br>
+
 
 ## 실행 환경
 
